@@ -1,4 +1,5 @@
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -15,12 +16,44 @@ module.exports = {
     },
     proxy: {
       "/api": {
-        target: "<url>",
+        target: process.env.VUE_APP_BASE_URL,
         pathRewrite: { "^/api": "" }
       }
     }
   },
+  configureWebpack: {
+    optimization: {
+      minimizer: [
+        // 打包去除console.log，debugger等
+        new TerserPlugin({
+          terserOptions: {
+            ecma: undefined,
+            warnings: false,
+            parse: {},
+            compress: {
+              drop_console: true,
+              drop_debugger: true
+              // pure_funcs: ["console.log"] // 移除console
+            }
+          }
+        })
+      ]
+    }
+  },
   chainWebpack: config => {
-    config.resolve.alias.set("@api", resolve("src/assets/request/api"));
+    // 路径别名
+    config.resolve.alias
+      .set("@api", resolve("src/assets/request/api"))
+      .set("@img", resolve("src/assets/img"))
+      .set("@css", resolve("src/assets/css"))
+      .set("@js", resolve("src/assets/js"))
+      .set("@views", resolve("src/views"))
+      .set("@components", resolve("src/components"));
+    // 配置图片打包为base64最小限制
+    config.module
+      .rule("images")
+      .use("url-loader")
+      .loader("url-loader")
+      .tap(options => Object.assign(options, { limit: 20000 }));
   }
 };

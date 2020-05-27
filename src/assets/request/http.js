@@ -1,10 +1,10 @@
 import axios from "axios";
 import qs from "qs";
+import { Message } from "element-ui";
 
-// const baseUrl = process.env.baseUrl;
 const request = axios.create({
   baseURL: "",
-  timeout: 1000,
+  timeout: 10000,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
   }
@@ -32,6 +32,11 @@ request.interceptors.response.use(
   },
   // 服务器状态码不是200的情况
   error => {
+    Message({
+      message: error.message,
+      type: "error",
+      duration: 5 * 1000
+    });
     if (error.response.status) {
       switch (error.response.status) {
         // 401: 未登录
