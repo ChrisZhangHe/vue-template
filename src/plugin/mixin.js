@@ -13,11 +13,13 @@ const mixin = {
       activated() {},
       deactivated() {},
       beforeRouteEnter(to, from, next) {
-        // ...
+        next();
       },
-      beforeRouteUpdate() {},
+      beforeRouteUpdate(to, from, next) {
+        next();
+      },
       beforeRouteLeave(to, from, next) {
-        // ...
+        next();
       }
     });
   }

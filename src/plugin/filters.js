@@ -1,6 +1,6 @@
 const filters = {
   install(Vue) {
-    Vue.filter("", value => {
+    Vue.filter("capitalize", value => {
       if (!value) return "";
       return (
         value

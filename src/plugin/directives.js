@@ -5,7 +5,7 @@ const directives = {
     Vue.directive("focus", {
       bind(el, binding, vnode, oldVnode) {},
       inserted(el, binding, vnode, oldVnode) {
-        el.focus;
+        vnode.componentInstance.focus();
       },
       update(el, binding, vnode, oldVnode) {},
       componentUpdated(el, binding, vnode, oldVnode) {},
