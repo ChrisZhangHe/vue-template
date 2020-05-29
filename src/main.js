@@ -10,6 +10,7 @@ import store from "./store/index";
 Vue.config.productionTip = true;
 
 Vue.use(ElementUI);
+Vue.use(window.AVUE);
 Vue.use(initPlugin);
 new Vue({
   router,
