@@ -55,9 +55,11 @@ export default {
     };
   },
   methods: {
-    error(err) {
+    error() {
       this.$message.success("请查看控制台");
-      console.log(err);
+      // eslint-disable-line no-console
+      // console.error(err);
+      // alert;
     },
     rowSave(form, done) {
       //   this.$message.success("新增数据" + JSON.stringify(form));
