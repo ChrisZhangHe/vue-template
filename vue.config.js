@@ -43,10 +43,10 @@ module.exports = {
   chainWebpack: config => {
     // 路径别名
     config.resolve.alias
-      .set("@api", resolve("src/assets/request/api"))
+      .set("@api", resolve("src/api"))
       .set("@img", resolve("src/assets/img"))
-      .set("@css", resolve("src/assets/css"))
-      .set("@js", resolve("src/assets/js"))
+      .set("@css", resolve("src/css"))
+      .set("@js", resolve("src/js"))
       .set("@views", resolve("src/views"))
       .set("@components", resolve("src/components"));
     // 配置图片打包为base64最小限制

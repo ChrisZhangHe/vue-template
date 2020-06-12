@@ -5,11 +5,6 @@ const StaticRoutes = [
     component: () => import("@views/Home")
   },
   {
-    path: "/avue",
-    name: "avue",
-    component: () => import("@views/Avue")
-  },
-  {
     path: "/404",
     name: "404",
     component: () => import("@views/404"),
