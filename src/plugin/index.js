@@ -3,7 +3,7 @@ import moment from "moment";
 import NProgress from "./NProgress";
 import directives from "./directives";
 import filters from "./filters";
-import mixin from "./mixin";
+import mixin from "./mixins/index";
 import permission from "../components/functional/permission";
 
 const initPlugin = {
