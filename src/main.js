@@ -6,6 +6,7 @@ import initPlugin from "./plugin/index";
 import App from "./App.vue";
 import router from "./router/index";
 import store from "./store/index";
+import "@api/login";
 
 Vue.config.productionTip = true;
 
