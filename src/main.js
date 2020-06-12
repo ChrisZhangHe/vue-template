@@ -11,7 +11,6 @@ import "@api/login";
 Vue.config.productionTip = true;
 
 Vue.use(ElementUI);
-Vue.use(window.AVUE);
 Vue.use(initPlugin);
 new Vue({
   router,
