@@ -15,5 +15,12 @@
       >
     </noscript>
     <div id="app"></div>
+    <script>
+      document.onkeydown = function(e) {
+        if (e.code === 'F5') {
+          location.reload();
+        }
+      };
+    </script>
   </body>
 </html>

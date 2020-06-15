@@ -5,6 +5,16 @@ const StaticRoutes = [
     component: () => import("@views/Home")
   },
   {
+    path: "/leftPage",
+    name: "leftPage",
+    component: () => import("@views/mainPage")
+  },
+  {
+    path: "/rightPage",
+    name: "rightPage",
+    component: () => import("@views/otherPage")
+  },
+  {
     path: "/404",
     name: "404",
     component: () => import("@views/404"),
