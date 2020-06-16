@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <h3>h3</h3> -->
     <router-view />
   </div>
 </template>
@@ -9,5 +10,8 @@ export default {
   created() {}
 };
 </script>
-
-<style lang="scss"></style>
+<style lang="scss" scoped>
+// h3 {
+//   // border: $border;
+// }
+</style>

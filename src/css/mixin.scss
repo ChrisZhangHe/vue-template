@@ -1,0 +1,17 @@
+// 单行文本省略号
+@mixin text-nowrap {
+  width: 350px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+//   多行文本省略号
+@mixin text-mutiple-nowrap {
+  width: 350px;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -15,6 +15,11 @@ const StaticRoutes = [
     component: () => import("@views/otherPage")
   },
   {
+    path: "/login",
+    name: "login",
+    component: () => import("@views/login/index")
+  },
+  {
     path: "/404",
     name: "404",
     component: () => import("@views/404"),
